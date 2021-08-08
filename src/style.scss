@@ -1,0 +1,105 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+  height: 100vh;
+  background-image: linear-gradient(-45deg, #e6c7cd, #d3ec8b);
+  font-family: "Lato", sans-serif;
+}
+
+.chat {
+  height: 300px;
+  width: 900px;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.85);
+  border-radius: 0.25rem 0.25rem 0 0;
+  overflow-y: auto;
+
+  &-message {
+    color: #eee;
+    background-color: lighten(#000, 15);
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    margin-bottom: 0.25rem;
+    &::before {
+      content: "✉️";
+      padding-right: 1rem;
+    }
+  }
+}
+
+.message-area {
+  width: 900px;
+  padding: 0.5rem 1.5rem;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+  .tooltip {
+    background-color: rgb(0, 0, 0);
+    color: #eee;
+    padding: 0.25rem 0.5rem;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 3.5rem;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  input {
+    padding: 0.25rem;
+    padding-left: 1rem;
+    width: 90%;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: lighten(#000, 15);
+    color: #eee;
+    &:not(:placeholder-shown) {
+      & + .tooltip {
+        opacity: 1;
+      }
+    }
+  }
+  button {
+    background-color: lighten(#000, 15);
+    color: #eee;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    transition: background-color 0.2s;
+    &:hover {
+      cursor: pointer;
+      background-color: lighten(#000, 35);
+    }
+    &:active {
+      background-color: lighten(#000, 55);
+    }
+  }
+}
+
+.ws-buttons {
+  width: 900px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1rem;
+
+  button {
+    background-color: lighten(#000, 15);
+    color: #eee;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem 0.75rem;
+    &:hover {
+      cursor: pointer;
+      background-color: #000;
+    }
+
+    &:active {
+      background-color: lighten(#000, 15);
+    }
+  }
+}

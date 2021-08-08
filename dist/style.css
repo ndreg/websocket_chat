@@ -1,0 +1,106 @@
+@charset "UTF-8";
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+  height: 100vh;
+  background-image: linear-gradient(-45deg, #e6c7cd, #d3ec8b);
+  font-family: "Lato", sans-serif;
+}
+
+.chat {
+  height: 300px;
+  width: 900px;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.85);
+  border-radius: 0.25rem 0.25rem 0 0;
+  overflow-y: auto;
+}
+.chat-message {
+  color: #eee;
+  background-color: #262626;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+.chat-message::before {
+  content: "✉️";
+  padding-right: 1rem;
+}
+
+.message-area {
+  width: 900px;
+  padding: 0.5rem 1.5rem;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.message-area .tooltip {
+  background-color: black;
+  color: #eee;
+  padding: 0.25rem 0.5rem;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 3.5rem;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.message-area input {
+  padding: 0.25rem;
+  padding-left: 1rem;
+  width: 90%;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #262626;
+  color: #eee;
+}
+.message-area input:not(:-moz-placeholder-shown) + .tooltip {
+  opacity: 1;
+}
+.message-area input:not(:-ms-input-placeholder) + .tooltip {
+  opacity: 1;
+}
+.message-area input:not(:placeholder-shown) + .tooltip {
+  opacity: 1;
+}
+.message-area button {
+  background-color: #262626;
+  color: #eee;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  transition: background-color 0.2s;
+}
+.message-area button:hover {
+  cursor: pointer;
+  background-color: #595959;
+}
+.message-area button:active {
+  background-color: #8c8c8c;
+}
+
+.ws-buttons {
+  width: 900px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+.ws-buttons button {
+  background-color: #262626;
+  color: #eee;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 0.75rem;
+}
+.ws-buttons button:hover {
+  cursor: pointer;
+  background-color: #000;
+}
+.ws-buttons button:active {
+  background-color: #262626;
+}
